@@ -9,7 +9,9 @@ public class mobAttacksPlayer: MonoBehaviour
 {
 
     public float currentHP = 20f;
+    public float maxHP = 20f;
     public float KnockbackForce = 10f;
+
 
     private Vector2 direction;
 
