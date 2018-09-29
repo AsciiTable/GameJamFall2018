@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 938031379}
   - component: {fileID: 938031378}
   - component: {fileID: 938031382}
+  - component: {fileID: 938031383}
   m_Layer: 0
   m_Name: character_holder
   m_TagString: Untagged
@@ -429,6 +430,22 @@ MonoBehaviour:
   move: 5
   jump: 8
   myRigidBody: {fileID: 938031378}
+--- !u!114 &938031383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938031377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f53bbb6effca4e7493ebcfa5d05b7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 938031377}
+  verticalPos: -7.35
+  horizontalPos: -2.93
+  suicide: -20
+  playerTrans: {fileID: 938031381}
 --- !u!1 &1413578444
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,14 @@ public class movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Horizontal Movement
         float hInput = Input.GetAxis("Horizontal");//horizontal input from the user
         //float vInput = Input.GetAxis("Vertical");
         transform.position = transform.position + new Vector3(hInput * move * Time.deltaTime, 0, 0);
         float hor = Input.GetAxis("Horizontal");
         transform.position = transform.position + new Vector3(hor * move * Time.deltaTime, 0, 0);
+
+        //Jump
         if (Input.GetButtonDown("Jump") && inAir == false)
         {
             myRigidBody.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
