@@ -24,14 +24,16 @@ public class respawn : MonoBehaviour {
             ResetScene();
         }
 	}
-
+    //tbh is not used but we'll see
     public void Die(){
         Debug.Log("is dead");
         isDead = true;
 
     }
 
+    //Resets the scene to the beginning
     public void ResetScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }
