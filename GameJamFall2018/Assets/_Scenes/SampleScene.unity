@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 938031383}
   m_Layer: 0
   m_Name: character_holder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
   spawnPosition: {fileID: 938031377}
   verticalPos: -7.35
   horizontalPos: -2.93
-  suicide: -20
+  suicidePoint: -15
   playerTrans: {fileID: 938031381}
 --- !u!1 &1413578444
 GameObject:
@@ -456,9 +456,10 @@ GameObject:
   - component: {fileID: 1413578448}
   - component: {fileID: 1413578447}
   - component: {fileID: 1413578445}
+  - component: {fileID: 1413578446}
   m_Layer: 0
   m_Name: enemy_holder
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,6 +489,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1413578446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413578444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c5f474958165047a495ad35c8c307f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1413578447
 SpriteRenderer:
   m_ObjectHideFlags: 0
