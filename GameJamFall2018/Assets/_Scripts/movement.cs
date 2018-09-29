@@ -8,6 +8,7 @@ public class movement : MonoBehaviour {
     public float jump = 8f;
     public int jumpLimit = 2;
     int jumpCurrent = 0;
+    public float multipleJumpForce = 4f;
     //float hor = .5f;
     public Rigidbody2D player;
     bool inAir;
@@ -31,10 +32,16 @@ public class movement : MonoBehaviour {
         {
             //JumpDrag();
             jumpCurrent++;
-            player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
-            if(jumpCurrent == jumpLimit){
+
+            if (jumpCurrent == jumpLimit)
+            {
+                player.AddForce(new Vector2(0, (multipleJumpForce)), ForceMode2D.Impulse);
                 inAir = true;
                 Debug.Log("inAir set to true");
+            }
+            else 
+            {
+                player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
             }
 
         }
