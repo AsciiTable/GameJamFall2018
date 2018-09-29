@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class user_interface : MonoBehaviour {
 
     public float hp = 10;
-    public float currentHP = 4;
+    public mobAttacksPlayer script_mobAttacksPlayer;
     public Image healthbar;
     //public movement player;
 
@@ -14,13 +14,13 @@ public class user_interface : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        script_mobAttacksPlayer = GetComponent<mobAttacksPlayer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (healthbar){
-            float percentHealth = hp / currentHP;
+            float percentHealth = script_mobAttacksPlayer.currentHP / script_mobAttacksPlayer.currentHP;
             healthbar.fillAmount = percentHealth;
             healthbar.color = gradient.Evaluate(percentHealth);
         }
