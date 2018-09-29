@@ -36,7 +36,7 @@ public class mobAttacksPlayer: MonoBehaviour
 
                 Vector2 forceVector = direction * KnockbackForce;
 
-                movement.IsKnockBack(forceVector);
+                //movement.IsKnockBack(forceVector);
             }
             
         }
