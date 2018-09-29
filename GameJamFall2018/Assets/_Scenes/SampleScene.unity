@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 666993983}
   m_Layer: 0
   m_Name: floor_holder
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 938031380}
   - component: {fileID: 938031379}
   - component: {fileID: 938031378}
+  - component: {fileID: 938031382}
   m_Layer: 0
   m_Name: character_holder
   m_TagString: Untagged
@@ -413,3 +414,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &938031382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938031377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00551a3e15252470c840eccf0b4efdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: 5
+  jump: 8
+  myRigidBody: {fileID: 938031378}
