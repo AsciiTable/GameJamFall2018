@@ -13,6 +13,8 @@ public class movement : MonoBehaviour {
     public Rigidbody2D player;
     bool inAir;
 
+    public bool IsKnockedBack = false;
+
     // Use this for initialization
     void Start () {
         inAir = false;
@@ -21,6 +23,10 @@ public class movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //Knockback stuff?
+        if (IsKnockedBack) return ();
+
         //Horizontal Movement
         float hInput = Input.GetAxis("Horizontal");
         transform.position = transform.position + new Vector3(hInput * move * Time.deltaTime, 0, 0);
@@ -55,6 +61,11 @@ public class movement : MonoBehaviour {
             inAir = false;
             Debug.Log("inAirset to false");
         }
+    }
+
+    public void IsKnockBack(Vector2 knockbackforce)
+    {
+        IsKnockedBack = false;
     }
 
 }
