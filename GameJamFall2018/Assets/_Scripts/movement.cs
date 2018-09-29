@@ -32,8 +32,11 @@ public class movement : MonoBehaviour {
             //JumpDrag();
             jumpCurrent++;
             player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
-            inAir = true;
-            Debug.Log("inAir set to true");
+            if(jumpCurrent == jumpLimit){
+                inAir = true;
+                Debug.Log("inAir set to true");
+            }
+
         }
 
     }
