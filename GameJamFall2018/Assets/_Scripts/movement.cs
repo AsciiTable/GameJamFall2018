@@ -6,6 +6,8 @@ public class movement : MonoBehaviour {
 
     public float move = 5f; 
     public float jump = 8f;
+    public int jumpLimit = 2;
+    int jumpCurrent = 0;
     //float hor = .5f;
     public Rigidbody2D player;
     bool inAir;
@@ -25,9 +27,10 @@ public class movement : MonoBehaviour {
        //transform.position = transform.position + new Vector3(hor * move * Time.deltaTime, 0, 0);
 
         //Jump
-        if (Input.GetButtonDown("Jump") && inAir == false)
+        if (Input.GetButtonDown("Jump") && inAir == false && jumpCurrent < jumpLimit)
         {
             //JumpDrag();
+            jumpCurrent++;
             player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
             inAir = true;
             Debug.Log("inAir set to true");
@@ -38,6 +41,7 @@ public class movement : MonoBehaviour {
     //Checks for collision on a platform to reset the jump bool
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Platform" && (inAir == true)){
+            jumpCurrent = 0;
             inAir = false;
             Debug.Log("inAirset to false");
         }
