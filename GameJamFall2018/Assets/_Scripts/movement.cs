@@ -65,6 +65,7 @@ public class movement : MonoBehaviour {
         }
     }
 
+
     public void IsKnockBack(Vector2 knockbackforce)
     {
         IsKnockedBack = false;
