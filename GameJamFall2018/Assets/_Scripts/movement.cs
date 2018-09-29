@@ -18,8 +18,8 @@ public class movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float hInput = Input.GetAxis("Horizontal");//horizontal input from the user
-        float vInput = Input.GetAxis("Vertical");
-        transform.position = transform.position + new Vector3(hInput * move * Time.deltaTime, vInput * move * Time.deltaTime, 0);
+        //float vInput = Input.GetAxis("Vertical");
+        transform.position = transform.position + new Vector3(hInput * move * Time.deltaTime, 0, 0);
         float hor = Input.GetAxis("Horizontal");
         transform.position = transform.position + new Vector3(hor * move * Time.deltaTime, 0, 0);
         if (Input.GetButtonDown("Jump") && inAir == false)
