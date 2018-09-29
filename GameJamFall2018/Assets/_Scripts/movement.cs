@@ -25,7 +25,7 @@ public class movement : MonoBehaviour {
 	void Update () {
 
         //Knockback stuff?
-        if (IsKnockedBack) return ();
+        if (IsKnockedBack) return;
 
         //Horizontal Movement
         float hInput = Input.GetAxis("Horizontal");
@@ -38,6 +38,7 @@ public class movement : MonoBehaviour {
         {
             //JumpDrag();
             jumpCurrent++;
+            Debug.Log("Current Jump Count: " + jumpCurrent);
 
             if (jumpCurrent == jumpLimit)
             {
@@ -47,6 +48,7 @@ public class movement : MonoBehaviour {
             }
             else 
             {
+                Debug.Log("inAir has not yet been set to true");
                 player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
             }
 
@@ -56,12 +58,13 @@ public class movement : MonoBehaviour {
 
     //Checks for collision on a platform to reset the jump bool
     private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.tag == "Platform" && (inAir == true)){
+        if (collision.gameObject.tag == "Platform"){// && (inAir == true)
             jumpCurrent = 0;
             inAir = false;
             Debug.Log("inAirset to false");
         }
     }
+
 
     public void IsKnockBack(Vector2 knockbackforce)
     {
