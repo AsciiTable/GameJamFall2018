@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//put this on player script
+
 public class playerCollides : MonoBehaviour
 {
 

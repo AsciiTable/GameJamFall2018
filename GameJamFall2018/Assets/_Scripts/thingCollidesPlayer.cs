@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//put this to obstacles that kill player
+
 public class thingCollidesPlayer : MonoBehaviour
 {
 
