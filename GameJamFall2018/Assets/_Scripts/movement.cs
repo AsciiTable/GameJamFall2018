@@ -53,6 +53,19 @@ public class movement : MonoBehaviour {
         float hInput = Input.GetAxis("Horizontal");
         transform.position = transform.position + new Vector3(hInput * move * Time.deltaTime, 0, 0);
 
+        // If the input is moving the player right and the player is facing left...
+        if (hInput > 0 && GetComponent<SpriteRenderer>().flipX)
+        {
+            // ... flip the player.
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if (hInput < 0 && !GetComponent<SpriteRenderer>().flipX)
+        {
+            // ... flip the player.
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+    
         //Jump
         //Debug.Log("Before first if: " + jumpCurrent);
         if ((Input.GetButtonDown("Jump") && (onGround == true)))
