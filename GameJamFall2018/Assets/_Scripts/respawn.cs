@@ -11,6 +11,7 @@ public class respawn : MonoBehaviour {
     private bool isDead = false;
     public float suicidePoint = -15f;
     public Transform playerTrans;
+    public GameObject deathSpace;
 
 	// Use this for initialization
 	void Start () {
