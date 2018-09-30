@@ -20,24 +20,7 @@ public class mobAttacksPlayer: MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-           if(script_movement != null)
-            {
-                currentHP = currentHP - 1f;
-
-                if (transform.position.x < script_movement.transform.position.x)
-                {
-                    direction = Vector2.right + Vector2.up;
-                }
-                else if (transform.position.x > script_movement.transform.position.x)
-                {
-                    direction = Vector2.right + Vector2.up;
-                }
-
-                Vector2 forceVector = direction * KnockbackForce;
-
-                //movement.IsKnockBack(forceVector);
-            }
-            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
 
