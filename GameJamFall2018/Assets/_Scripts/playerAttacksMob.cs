@@ -12,7 +12,7 @@ public class playerAttacksMob : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Deathable"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(collision.gameObject);
         }
 
         
