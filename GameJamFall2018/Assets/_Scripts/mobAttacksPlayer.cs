@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class mobAttacksPlayer: MonoBehaviour
 {
 
+    public float maxHP = 20f;
     public float currentHP = 20f;
     public float KnockbackForce = 10f;
 

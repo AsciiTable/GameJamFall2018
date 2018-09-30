@@ -14,5 +14,7 @@ public class playerAttacksMob : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        
     }
 }
