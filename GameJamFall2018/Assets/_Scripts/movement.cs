@@ -8,9 +8,12 @@ public class movement : MonoBehaviour {
     public float jump = 8f;
     public int jumpLimit = 2;
     int jumpCurrent = 0;
+    public float multipleJumpForce = 4f;
     //float hor = .5f;
     public Rigidbody2D player;
     bool inAir;
+
+    public bool IsKnockedBack = false;
 
     // Use this for initialization
     void Start () {
@@ -20,6 +23,10 @@ public class movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //Knockback stuff?
+        if (IsKnockedBack) return;
+
         //Horizontal Movement
         float hInput = Input.GetAxis("Horizontal");
         transform.position = transform.position + new Vector3(hInput * move * Time.deltaTime, 0, 0);
@@ -31,10 +38,18 @@ public class movement : MonoBehaviour {
         {
             //JumpDrag();
             jumpCurrent++;
-            player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
-            if(jumpCurrent == jumpLimit){
+            Debug.Log("Current Jump Count: " + jumpCurrent);
+
+            if (jumpCurrent == jumpLimit)
+            {
+                player.AddForce(new Vector2(0, (multipleJumpForce)), ForceMode2D.Impulse);
                 inAir = true;
                 Debug.Log("inAir set to true");
+            }
+            else 
+            {
+                Debug.Log("inAir has not yet been set to true");
+                player.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
             }
 
         }
@@ -43,11 +58,17 @@ public class movement : MonoBehaviour {
 
     //Checks for collision on a platform to reset the jump bool
     private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.tag == "Platform" && (inAir == true)){
+        if (collision.gameObject.tag == "Platform"){// && (inAir == true)
             jumpCurrent = 0;
             inAir = false;
             Debug.Log("inAirset to false");
         }
+    }
+
+
+    public void IsKnockBack(Vector2 knockbackforce)
+    {
+        IsKnockedBack = false;
     }
 
 }

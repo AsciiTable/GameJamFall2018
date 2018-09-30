@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//put this to obstacles that kill player
+//put this on player script
 
-public class thingCollidesPlayer : MonoBehaviour
+public class playerAttacksMob : MonoBehaviour
 {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Deathable"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }   
+        }
+
+        
     }
 }
